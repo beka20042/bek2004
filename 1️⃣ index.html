@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fffaf2">
+  <title>Приглашение на Валииму</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="page">
+
+<header class="hero">
+
+  <div class="arch arch-left">
+    <div class="arch-pattern"></div>
+    <div class="lantern">🕯</div>
+  </div>
+
+  <div class="hero-content">
+
+    <div class="arabic">
+      بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+    </div>
+
+    <p class="permission">
+      С дозволения Всевышнего Аллаха
+    </p>
+
+    <h1>Приглашение на</h1>
+
+    <h2>Валииму</h2>
+
+    <div class="ornament">◆</div>
+
+    <p class="hero-text">
+      Будем искренне рады разделить с вами<br>
+      этот благословенный день.
+    </p>
+
+    <button
+      class="scroll-btn"
+      onclick="document.querySelector('#welcome').scrollIntoView({behavior:'smooth'})">
+      ⌄
+    </button>
+
+  </div>
+
+  <div class="arch arch-right">
+    <div class="arch-pattern"></div>
+    <div class="lantern">🕯</div>
+  </div>
+
+</header>
+
+
+<main>
+
+<section class="card welcome" id="welcome">
+
+  <div class="arabic small">
+    بَارَكَ اللَّهُ لَكُمَا
+  </div>
+
+  <h3>
+    Ассаляму алейкум ва рахматуллахи ва баракатух!
+  </h3>
+
+  <p>
+    С дозволения Всевышнего Аллаха мы планируем создать новую семью
+    в соответствии с сунной Пророка Мухаммада ﷺ.
+  </p>
+
+  <p>
+    Будем искренне рады разделить с вами радость этого благословенного дня,
+    вознести ду'а за наш союз и разделить задá щедрого трапезу (валииму).
+  </p>
+
+  <blockquote>
+
+    <span class="quote-mark">“</span>
+
+    «О молодёжь! Кто из вас способен вступить в брак, пусть женится,
+    ибо это лучше помогает обуздать взор и оберегает невинность».
+
+    <footer>
+      Аль-Бухари и Муслим
+    </footer>
+
+    <span class="quote-mark bottom">”</span>
+
+  </blockquote>
+
+</section>
+
+
+<section class="card details">
+
+  <h3>
+    Наш благословенный день
+  </h3>
+
+  <div class="info-grid">
+
+    <div class="info-box">
+
+      <div class="icon">▣</div>
+
+      <div>
+        <span>Дата:</span>
+        <strong>16 августа 2026</strong>
+      </div>
+
+    </div>
+
+
+    <div class="info-box">
+
+      <div class="icon">◷</div>
+
+      <div>
+        <span>Время:</span>
+        <strong>16:00</strong>
+      </div>
+
+    </div>
+
+
+    <div class="info-box">
+
+      <div class="icon">●</div>
+
+      <div>
+        <span>Место:</span>
+        <strong>Маджариптал, 216</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <h4>
+    До нашей встречи
+  </h4>
+
+  <div class="countdown">
+
+    <div>
+      <strong id="days">0</strong>
+      <span>Дней</span>
+    </div>
+
+    <div>
+      <strong id="hours">0</strong>
+      <span>Часов</span>
+    </div>
+
+    <div>
+      <strong id="minutes">0</strong>
+      <span>Минут</span>
+    </div>
+
+    <div>
+      <strong id="seconds">0</strong>
+      <span>Секунд</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="bottom-grid">
+
+
+<div class="card location">
+
+  <div>
+
+    <h3>
+      Как нас найти
+    </h3>
+
+    <p>
+      Мы будем рады видеть вас<br>
+      на этом особенном дне.
+    </p>
+
+    <a
+      class="button"
+      target="_blank"
+      href="https://www.google.com/maps/search/?api=1&query=%D0%9C%D0%B0%D0%B4%D0%B6%D0%B0%D1%80%D0%B8%D0%BF%D1%82%D0%B0%D0%BB%2C%20216">
+
+      Открыть карту
+
+    </a>
+
+  </div>
+
+
+  <div class="map">
+
+    <span>📍</span>
+
+    <small>
+      Маджариптал, 216
+    </small>
+
+  </div>
+
+</div>
+
+
+
+<div class="card rsvp">
+
+  <div>
+
+    <h3>
+      Подтвердите присутствие
+    </h3>
+
+    <p>
+      Пожалуйста, сообщите нам,<br>
+      сможете ли вы присутствовать.
+    </p>
+
+    <a
+      class="button"
+      id="rsvpButton"
+      href="#">
+
+      💬 Подтвердить присутствие
+
+    </a>
+
+  </div>
+
+</div>
+
+
+</section>
+
+
+<section class="card closing">
+
+  <div class="arabic small">
+    بَارَكَ اللَّهُ فِيكُمْ
+  </div>
+
+  <p>
+    И вознаградит вас Аллах благом за то,<br>
+    что вы стали частью этого важного для нас дня.
+  </p>
+
+  <h3>
+    Ждём вас на нашей валииме
+  </h3>
+
+</section>
+
+</main>
+
+
+<footer class="footer">
+  С любовью и благодарностью 🤍
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
