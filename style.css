@@ -1,631 +1,705 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 html {
-scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-background: #f4efe4;
-color: #263c31;
-font-family: "Cormorant Garamond", serif;
-overflow-x: hidden;
-}
-
-body::before {
-content: "";
-position: fixed;
-inset: 12px;
-border: 1px solid rgba(164, 133, 71, 0.25);
-pointer-events: none;
-z-index: 2000;
-}
-
-.ornament {
-color: #b4965b;
-letter-spacing: 12px;
-font-size: 22px;
-opacity: .8;
-}
-
-.top {
-position: absolute;
-top: 35px;
-}
-
-.bottom {
-position: absolute;
-bottom: 35px;
+    background: #f4efe4;
+    color: #263c31;
+    font-family: "Cormorant Garamond", serif;
+    overflow-x: hidden;
 }
 
 /* =========================
-ОБЛОЖКА
+   РАМКА
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 12px;
+
+    border: 1px solid rgba(164, 133, 71, 0.25);
+
+    pointer-events: none;
+    z-index: 2000;
+}
+
+
+/* =========================
+   ОРНАМЕНТ
+========================= */
+
+.ornament {
+    position: absolute;
+
+    color: #b4965b;
+
+    letter-spacing: 12px;
+    font-size: 22px;
+
+    opacity: 0.8;
+}
+
+.top {
+    top: 35px;
+}
+
+.bottom {
+    bottom: 35px;
+}
+
+
+/* =========================
+   ОБЛОЖКА
 ========================= */
 
 #loader {
-position: fixed;
-inset: 0;
-z-index: 1000;
+    position: fixed;
+    inset: 0;
 
-```
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+    z-index: 1000;
 
-background:
-    radial-gradient(
-        circle at center,
-        rgba(255,255,255,.8),
-        transparent 55%
-    ),
-    #f4efe4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
-transition:
-    opacity 1.5s ease,
-    visibility 1.5s ease;
-```
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.8),
+            transparent 55%
+        ),
+        #f4efe4;
 
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s ease;
 }
 
 #loader.hidden {
-opacity: 0;
-visibility: hidden;
-pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
+
+/* =========================
+   КОНВЕРТ
+========================= */
+
 .envelope {
-width: min(90%, 520px);
-min-height: 650px;
+    position: relative;
 
-```
-padding: 70px 30px;
+    width: min(90%, 520px);
+    min-height: 650px;
 
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+    padding: 70px 30px;
 
-text-align: center;
-position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-border: 1px solid #b4965b;
+    text-align: center;
 
-background:
-    linear-gradient(
-        135deg,
-        rgba(255,255,255,.55),
-        rgba(255,255,255,.15)
-    );
+    border: 1px solid #b4965b;
 
-box-shadow:
-    0 25px 80px rgba(50,40,20,.12);
-```
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.55),
+            rgba(255, 255, 255, 0.15)
+        );
 
+    box-shadow:
+        0 25px 80px rgba(50, 40, 20, 0.12);
 }
 
 .envelope::before,
 .envelope::after {
-content: "";
-position: absolute;
+    content: "";
 
-```
-width: 85px;
-height: 85px;
+    position: absolute;
 
-border-color: #b4965b;
-border-style: solid;
-```
+    width: 85px;
+    height: 85px;
 
+    border-color: #b4965b;
+    border-style: solid;
 }
 
 .envelope::before {
-top: 15px;
-left: 15px;
-border-width: 1px 0 0 1px;
+    top: 15px;
+    left: 15px;
+
+    border-width: 1px 0 0 1px;
 }
 
 .envelope::after {
-bottom: 15px;
-right: 15px;
-border-width: 0 1px 1px 0;
+    bottom: 15px;
+    right: 15px;
+
+    border-width: 0 1px 1px 0;
 }
+
+
+/* =========================
+   БИСМИЛЛЯХ
+========================= */
 
 .bismillah,
 .arabic-symbol,
 .final-bismillah {
-font-family: serif;
-color: #a28349;
+    font-family: serif;
+    color: #a28349;
 }
 
 .bismillah {
-font-size: 55px;
-margin-bottom: 25px;
+    font-size: 55px;
+    margin-bottom: 25px;
 }
 
 .small-title {
-font-size: 17px;
-color: #7c7668;
-letter-spacing: 1px;
-margin-bottom: 22px;
+    font-size: 17px;
+
+    color: #7c7668;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 22px;
 }
 
 .envelope h1 {
-font-size: clamp(48px, 11vw, 72px);
-font-weight: 400;
-line-height: 1;
-color: #29483a;
+    font-size: clamp(48px, 11vw, 72px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #29483a;
 }
 
 .decor-line {
-margin: 30px 0;
-color: #a28349;
-font-size: 25px;
+    margin: 30px 0;
+
+    color: #a28349;
+
+    font-size: 25px;
 }
 
 .envelope p {
-font-size: 20px;
-line-height: 1.6;
-color: #666257;
-margin-bottom: 38px;
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    color: #666257;
+
+    margin-bottom: 38px;
 }
 
+
 /* =========================
-КНОПКИ
+   КНОПКИ
 ========================= */
 
 button,
 .main-button {
-border: 1px solid #a28349;
-background: #29483a;
-color: #fff;
+    display: inline-block;
 
-```
-padding: 15px 28px;
+    border: 1px solid #a28349;
 
-font-family: inherit;
-font-size: 18px;
+    background: #29483a;
 
-text-decoration: none;
-cursor: pointer;
+    color: #ffffff;
 
-transition:
-    transform .3s ease,
-    background .3s ease,
-    box-shadow .3s ease;
-```
+    padding: 15px 28px;
 
+    font-family: inherit;
+
+    font-size: 18px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 button:hover,
 .main-button:hover {
-background: #a28349;
-transform: translateY(-3px);
+    background: #a28349;
 
-```
-box-shadow:
-    0 10px 25px rgba(40,60,45,.18);
-```
+    transform: translateY(-3px);
 
+    box-shadow:
+        0 10px 25px rgba(40, 60, 45, 0.18);
 }
 
+
 /* =========================
-ОСНОВНОЙ КОНТЕНТ
+   ОСНОВНОЙ КОНТЕНТ
 ========================= */
 
 #content {
-opacity: 0;
-transition: opacity 1.8s ease;
+    opacity: 0;
+
+    transition: opacity 1.5s ease;
 }
 
 #content.visible {
-opacity: 1;
+    opacity: 1;
 }
 
 .section {
-width: min(92%, 760px);
-margin: auto;
-padding: 95px 20px;
-text-align: center;
+    width: min(92%, 760px);
+
+    margin: 0 auto;
+
+    padding: 95px 20px;
+
+    text-align: center;
 }
 
+
+/* =========================
+   ПЕРВАЯ СТРАНИЦА
+========================= */
+
 .hero {
-padding-top: 110px;
+    padding-top: 110px;
 }
 
 .arabic-symbol {
-font-size: 48px;
-margin-bottom: 25px;
+    font-size: 48px;
+
+    margin-bottom: 25px;
 }
 
 .gold-line {
-width: 90px;
-height: 1px;
-background: #b4965b;
-margin: 0 auto 35px;
+    width: 90px;
+
+    height: 1px;
+
+    background: #b4965b;
+
+    margin: 0 auto 35px;
 }
 
 .hero h2 {
-font-size: clamp(30px, 7vw, 48px);
-font-weight: 400;
-line-height: 1.2;
-color: #29483a;
-margin-bottom: 35px;
+    font-size: clamp(30px, 7vw, 48px);
+
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    color: #29483a;
+
+    margin-bottom: 35px;
 }
 
 .hero p {
-font-size: 21px;
-line-height: 1.8;
-color: #56564e;
-margin-bottom: 22px;
+    font-size: 21px;
+
+    line-height: 1.8;
+
+    color: #56564e;
+
+    margin-bottom: 22px;
 }
 
+
 /* =========================
-ЦИТАТА
+   ХАДИС
 ========================= */
 
 .quote-section {
-position: relative;
+    position: relative;
 
-```
-background:
-    linear-gradient(
-        rgba(41,72,58,.96),
-        rgba(41,72,58,.96)
-    );
+    width: 100%;
+    max-width: 100%;
 
-color: #f5efe3;
-max-width: 100%;
+    padding: 100px 10%;
 
-padding-left: 10%;
-padding-right: 10%;
-```
+    background: #29483a;
 
+    color: #f5efe3;
+
+    text-align: center;
 }
 
 .quote-ornament {
-font-size: 45px;
-color: #c2a66b;
-margin-bottom: 30px;
+    font-size: 45px;
+
+    color: #c2a66b;
+
+    margin-bottom: 30px;
 }
 
 blockquote {
-font-size: clamp(23px, 5vw, 32px);
-line-height: 1.6;
-font-style: italic;
-max-width: 800px;
-margin: auto;
+    display: block;
+
+    width: 100%;
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    font-size: clamp(23px, 5vw, 32px);
+
+    line-height: 1.6;
+
+    font-style: italic;
+
+    color: #f5efe3;
 }
 
 .quote-author {
-margin-top: 30px;
-color: #d0b77e;
-font-size: 19px;
+    display: block;
+
+    margin-top: 30px;
+
+    color: #d0b77e;
+
+    font-size: 19px;
 }
 
+
 /* =========================
-ЗАГОЛОВКИ
+   ЗАГОЛОВКИ
 ========================= */
 
 .section-title {
-text-align: center;
-margin-bottom: 45px;
+    text-align: center;
+
+    margin-bottom: 45px;
 }
 
 .section-title span {
-display: block;
-font-size: 32px;
-color: #29483a;
-margin-bottom: 15px;
+    display: block;
+
+    font-size: 32px;
+
+    color: #29483a;
+
+    margin-bottom: 15px;
 }
 
 .section-title div {
-color: #a28349;
-font-size: 22px;
+    color: #a28349;
+
+    font-size: 22px;
 }
 
+
 /* =========================
-ДЕТАЛИ
+   ДАТА / ВРЕМЯ / МЕСТО
 ========================= */
 
 .details {
-display: flex;
-flex-direction: column;
-align-items: center;
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
 }
 
 .detail-card {
-width: min(100%, 500px);
+    width: min(100%, 500px);
 
-```
-padding: 30px;
-margin-bottom: 18px;
+    padding: 30px;
 
-background: rgba(255,255,255,.38);
+    margin-bottom: 18px;
 
-border: 1px solid rgba(164,133,71,.45);
+    background: rgba(255, 255, 255, 0.38);
 
-text-align: center;
+    border: 1px solid rgba(164, 133, 71, 0.45);
 
-transition: transform .3s ease;
-```
+    text-align: center;
 
+    transition: transform 0.3s ease;
 }
 
 .detail-card:hover {
-transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .detail-icon {
-color: #a28349;
-font-size: 32px;
-margin-bottom: 12px;
+    color: #a28349;
+
+    font-size: 32px;
+
+    margin-bottom: 12px;
 }
 
 .detail-label {
-color: #8a806d;
-font-size: 18px;
-margin-bottom: 8px;
+    color: #8a806d;
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
 }
 
 .detail-value {
-font-size: 27px;
-color: #29483a;
+    font-size: 27px;
+
+    color: #29483a;
 }
 
+
 /* =========================
-ТАЙМЕР
+   ТАЙМЕР
 ========================= */
 
 .countdown-section {
-background: rgba(255,255,255,.3);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 #countdown {
-display: flex;
-justify-content: center;
-gap: 12px;
-flex-wrap: wrap;
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
 }
 
 .time-box {
-min-width: 105px;
-padding: 20px 10px;
+    min-width: 105px;
 
-```
-border: 1px solid rgba(164,133,71,.5);
+    padding: 20px 10px;
 
-background: rgba(255,255,255,.5);
-```
+    border: 1px solid rgba(164, 133, 71, 0.5);
 
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .time-box span {
-display: block;
-font-size: 42px;
-color: #29483a;
+    display: block;
+
+    font-size: 42px;
+
+    color: #29483a;
 }
 
 .time-box small {
-font-size: 16px;
-color: #7a7569;
+    font-size: 16px;
+
+    color: #7a7569;
 }
 
+
 /* =========================
-КНОПКИ ДЕЙСТВИЙ
+   ДЕЙСТВИЯ
 ========================= */
 
 .action-section {
-display: grid;
+    display: grid;
 
-```
-grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
-gap: 25px;
+    gap: 25px;
 
-max-width: 900px;
-```
+    width: min(92%, 900px);
 
+    max-width: 900px;
 }
 
 .action-card {
-padding: 45px 25px;
+    padding: 45px 25px;
 
-```
-border: 1px solid rgba(164,133,71,.5);
+    border: 1px solid rgba(164, 133, 71, 0.5);
 
-background: rgba(255,255,255,.4);
+    background: rgba(255, 255, 255, 0.4);
 
-text-align: center;
-```
-
+    text-align: center;
 }
 
 .action-icon {
-font-size: 35px;
-margin-bottom: 18px;
+    font-size: 35px;
+
+    margin-bottom: 18px;
 }
 
 .action-card h3 {
-font-size: 30px;
-font-weight: 400;
+    font-size: 30px;
 
-```
-color: #29483a;
+    font-weight: 400;
 
-margin-bottom: 15px;
-```
+    color: #29483a;
 
+    margin-bottom: 15px;
 }
 
 .action-card p {
-font-size: 18px;
-line-height: 1.6;
+    font-size: 18px;
 
-```
-color: #666257;
+    line-height: 1.6;
 
-margin-bottom: 25px;
-```
+    color: #666257;
 
+    margin-bottom: 25px;
 }
 
+
+/* =========================
+   WHATSAPP
+========================= */
+
 .whatsapp {
-background: #287b4d;
+    background: #287b4d;
 }
 
 .whatsapp:hover {
-background: #1f633e;
+    background: #1f633e;
 }
 
+
 /* =========================
-ФИНАЛ
+   ФИНАЛ
 ========================= */
 
 .final-section {
-padding: 100px 20px;
+    padding: 100px 20px;
 
-```
-text-align: center;
+    text-align: center;
 
-background: #29483a;
+    background: #29483a;
 
-color: #f5efe3;
-```
-
+    color: #f5efe3;
 }
 
 .final-ornament {
-color: #c2a66b;
+    color: #c2a66b;
 
-```
-font-size: 24px;
+    font-size: 24px;
 
-letter-spacing: 8px;
+    letter-spacing: 8px;
 
-margin: 20px;
-```
-
+    margin: 20px;
 }
 
 .final-bismillah {
-font-size: 48px;
+    font-size: 48px;
 
-```
-margin-bottom: 30px;
-```
-
+    margin-bottom: 30px;
 }
 
 .final-section p {
-max-width: 600px;
+    width: min(100%, 600px);
 
-```
-margin: auto auto 25px;
+    margin: 0 auto 25px;
 
-font-size: 22px;
+    font-size: 22px;
 
-line-height: 1.7;
-```
-
+    line-height: 1.7;
 }
 
 .final-section h3 {
-font-size: 32px;
+    font-size: 32px;
 
-```
-font-weight: 400;
+    font-weight: 400;
 
-color: #d2b87b;
-```
-
+    color: #d2b87b;
 }
 
+
 /* =========================
-МОБИЛЬНАЯ ВЕРСИЯ
+   МОБИЛЬНЫЙ ТЕЛЕФОН
 ========================= */
 
 @media (max-width: 700px) {
 
-```
-body::before {
-    inset: 7px;
-}
+    body::before {
+        inset: 7px;
+    }
 
-.envelope {
-    min-height: 570px;
-    padding: 45px 20px;
-}
+    .envelope {
+        min-height: 570px;
 
-.bismillah {
-    font-size: 43px;
-}
+        padding: 45px 20px;
+    }
 
-.envelope h1 {
-    font-size: 50px;
-}
+    .bismillah {
+        font-size: 43px;
+    }
 
-.hero {
-    padding-top: 80px;
-}
+    .envelope h1 {
+        font-size: 50px;
+    }
 
-.hero p {
-    font-size: 19px;
-    line-height: 1.7;
-}
+    .hero {
+        padding-top: 80px;
+    }
 
-.section {
-    padding: 70px 15px;
-}
+    .hero p {
+        font-size: 19px;
 
-.quote-section {
-    padding-left: 25px;
-    padding-right: 25px;
-}
+        line-height: 1.7;
+    }
 
-blockquote {
-    font-size: 22px;
-}
+    .section {
+        padding: 70px 15px;
+    }
 
-.section-title span {
-    font-size: 28px;
-}
+    .quote-section {
+        padding: 75px 25px;
+    }
 
-.detail-value {
-    font-size: 24px;
-}
+    blockquote {
+        font-size: 22px;
 
-#countdown {
-    gap: 7px;
-}
+        line-height: 1.6;
+    }
 
-.time-box {
-    min-width: 75px;
-    padding: 15px 7px;
-}
+    .section-title span {
+        font-size: 28px;
+    }
 
-.time-box span {
-    font-size: 30px;
-}
+    .detail-value {
+        font-size: 24px;
+    }
 
-.time-box small {
-    font-size: 14px;
-}
+    #countdown {
+        gap: 7px;
+    }
 
-.action-section {
-    grid-template-columns: 1fr;
-}
+    .time-box {
+        min-width: 75px;
 
-.action-card {
-    padding: 35px 20px;
-}
+        padding: 15px 7px;
+    }
 
-.final-section {
-    padding: 75px 20px;
-}
-```
+    .time-box span {
+        font-size: 30px;
+    }
 
+    .time-box small {
+        font-size: 14px;
+    }
+
+    .action-section {
+        grid-template-columns: 1fr;
+    }
+
+    .action-card {
+        padding: 35px 20px;
+    }
+
+    .final-section {
+        padding: 75px 20px;
+    }
+
+    .final-section h3 {
+        font-size: 28px;
+    }
 }
