@@ -1,4 +1,4 @@
-- {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,10 +14,6 @@ color: #263c31;
 font-family: "Cormorant Garamond", serif;
 overflow-x: hidden;
 }
-
-/\* =========================
-ОБЩИЙ ОРНАМЕНТ
-\========================= \*/
 
 body::before {
 content: "";
@@ -45,11 +41,11 @@ position: absolute;
 bottom: 35px;
 }
 
-/\* =========================
+/* =========================
 ОБЛОЖКА
-\========================= \*/
+========================= */
 
-\#loader {
+#loader {
 position: fixed;
 inset: 0;
 z-index: 1000;
@@ -75,7 +71,7 @@ transition:
 
 }
 
-\#loader.hidden {
+#loader.hidden {
 opacity: 0;
 visibility: hidden;
 pointer-events: none;
@@ -94,7 +90,6 @@ align-items: center;
 justify-content: center;
 
 text-align: center;
-
 position: relative;
 
 border: 1px solid #b4965b;
@@ -115,10 +110,9 @@ box-shadow:
 .envelope::before,
 .envelope::after {
 content: "";
-
-```
 position: absolute;
 
+```
 width: 85px;
 height: 85px;
 
@@ -131,21 +125,13 @@ border-style: solid;
 .envelope::before {
 top: 15px;
 left: 15px;
-
-```
 border-width: 1px 0 0 1px;
-```
-
 }
 
 .envelope::after {
 bottom: 15px;
 right: 15px;
-
-```
 border-width: 0 1px 1px 0;
-```
-
 }
 
 .bismillah,
@@ -187,9 +173,9 @@ color: #666257;
 margin-bottom: 38px;
 }
 
-/\* =========================
-КНОПКА
-\========================= \*/
+/* =========================
+КНОПКИ
+========================= */
 
 button,
 .main-button {
@@ -204,7 +190,6 @@ font-family: inherit;
 font-size: 18px;
 
 text-decoration: none;
-
 cursor: pointer;
 
 transition:
@@ -215,8 +200,8 @@ transition:
 
 }
 
-button\:hover,
-.main-button\:hover {
+button:hover,
+.main-button:hover {
 background: #a28349;
 transform: translateY(-3px);
 
@@ -227,29 +212,24 @@ box-shadow:
 
 }
 
-/\* =========================
+/* =========================
 ОСНОВНОЙ КОНТЕНТ
-\========================= \*/
+========================= */
 
-\#content {
+#content {
 opacity: 0;
 transition: opacity 1.8s ease;
 }
 
-\#content.visible {
+#content.visible {
 opacity: 1;
 }
 
 .section {
 width: min(92%, 760px);
 margin: auto;
-
-```
 padding: 95px 20px;
-
 text-align: center;
-```
-
 }
 
 .hero {
@@ -272,43 +252,32 @@ margin: 0 auto 35px;
 font-size: clamp(30px, 7vw, 48px);
 font-weight: 400;
 line-height: 1.2;
-
-```
 color: #29483a;
-
 margin-bottom: 35px;
-```
-
 }
 
 .hero p {
 font-size: 21px;
 line-height: 1.8;
-
-```
 color: #56564e;
-
 margin-bottom: 22px;
-```
-
 }
 
-/\* =========================
+/* =========================
 ЦИТАТА
-\========================= \*/
+========================= */
 
 .quote-section {
 position: relative;
 
-background:
-linear-gradient(
-rgba(41,72,58,.96),
-rgba(41,72,58,.96)
-);
-
 ```
-color: #f5efe3;
+background:
+    linear-gradient(
+        rgba(41,72,58,.96),
+        rgba(41,72,58,.96)
+    );
 
+color: #f5efe3;
 max-width: 100%;
 
 padding-left: 10%;
@@ -337,9 +306,9 @@ color: #d0b77e;
 font-size: 19px;
 }
 
-/\* =========================
+/* =========================
 ЗАГОЛОВКИ
-\========================= \*/
+========================= */
 
 .section-title {
 text-align: center;
@@ -348,15 +317,9 @@ margin-bottom: 45px;
 
 .section-title span {
 display: block;
-
-```
 font-size: 32px;
-
 color: #29483a;
-
 margin-bottom: 15px;
-```
-
 }
 
 .section-title div {
@@ -364,46 +327,11 @@ color: #a28349;
 font-size: 22px;
 }
 
-/\* =========================
-КАРТОЧКИ
-\========================= \*/
+/* =========================
+ДЕТАЛИ
+========================= */
 
 .details {
-
-\#countdown {
-gap: 7px;
-}
-
-```
-.time-box {
-    min-width: 75px;
-    padding: 15px 7px;
-}
-
-.time-box span {
-    font-size: 30px;
-}
-
-.time-box small {
-    font-size: 14px;
-}
-
-.action-section {
-    grid-template-columns: 1fr;
-}
-
-.action-card {
-    padding: 35px 20px;
-}
-
-.final-section {
-    padding: 75px 20px;
-}
-```
-
-}
-
-
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -414,7 +342,6 @@ width: min(100%, 500px);
 
 ```
 padding: 30px;
-
 margin-bottom: 18px;
 
 background: rgba(255,255,255,.38);
@@ -428,7 +355,7 @@ transition: transform .3s ease;
 
 }
 
-.detail-card\:hover {
+.detail-card:hover {
 transform: translateY(-5px);
 }
 
@@ -449,31 +376,26 @@ font-size: 27px;
 color: #29483a;
 }
 
-/\* =========================
+/* =========================
 ТАЙМЕР
-\========================= \*/
+========================= */
 
 .countdown-section {
 background: rgba(255,255,255,.3);
 }
 
-\#countdown {
+#countdown {
 display: flex;
 justify-content: center;
 gap: 12px;
-
-```
 flex-wrap: wrap;
-```
-
 }
 
 .time-box {
 min-width: 105px;
-
-```
 padding: 20px 10px;
 
+```
 border: 1px solid rgba(164,133,71,.5);
 
 background: rgba(255,255,255,.5);
@@ -483,13 +405,8 @@ background: rgba(255,255,255,.5);
 
 .time-box span {
 display: block;
-
-```
 font-size: 42px;
-
 color: #29483a;
-```
-
 }
 
 .time-box small {
@@ -497,9 +414,9 @@ font-size: 16px;
 color: #7a7569;
 }
 
-/\* =========================
+/* =========================
 КНОПКИ ДЕЙСТВИЙ
-\========================= \*/
+========================= */
 
 .action-section {
 display: grid;
@@ -560,13 +477,13 @@ margin-bottom: 25px;
 background: #287b4d;
 }
 
-.whatsapp\:hover {
+.whatsapp:hover {
 background: #1f633e;
 }
 
-/\* =========================
+/* =========================
 ФИНАЛ
-\========================= \*/
+========================= */
 
 .final-section {
 padding: 100px 20px;
@@ -627,9 +544,9 @@ color: #d2b87b;
 
 }
 
-/\* =========================
+/* =========================
 МОБИЛЬНАЯ ВЕРСИЯ
-\========================= \*/
+========================= */
 
 @media (max-width: 700px) {
 
@@ -680,4 +597,35 @@ blockquote {
 .detail-value {
     font-size: 24px;
 }
+
+#countdown {
+    gap: 7px;
+}
+
+.time-box {
+    min-width: 75px;
+    padding: 15px 7px;
+}
+
+.time-box span {
+    font-size: 30px;
+}
+
+.time-box small {
+    font-size: 14px;
+}
+
+.action-section {
+    grid-template-columns: 1fr;
+}
+
+.action-card {
+    padding: 35px 20px;
+}
+
+.final-section {
+    padding: 75px 20px;
+}
 ```
+
+}
