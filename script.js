@@ -1,181 +1,110 @@
-// ========================================
-// НАСТРОЙКИ
-// ========================================
+// ==========================================
+// ОТКРЫТИЕ ПРИГЛАШЕНИЯ
+// ==========================================
 
-// Дата валиимы
-const eventDate = new Date("2026-08-16T16:00:00");
+const openBtn = document.getElementById("openBtn");
+const loader = document.getElementById("loader");
+const content = document.getElementById("content");
 
-// ========================================
-// ОБРАТНЫЙ ОТСЧЁТ
-// ========================================
+openBtn.addEventListener("click", function () {
+
+    // Небольшой эффект нажатия
+    openBtn.style.transform = "scale(0.95)";
+
+    setTimeout(function () {
+
+        // Закрываем обложку
+        loader.classList.add("hidden");
+
+        // Показываем приглашение
+        setTimeout(function () {
+            content.classList.add("visible");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }, 500);
+
+    }, 250);
+
+});
+
+
+// ==========================================
+// ТАЙМЕР ДО ВАЛИМЫ
+// 16 АВГУСТА 2026 — 16:00
+// ==========================================
+
+const weddingDate = new Date("2026-08-16T16:00:00").getTime();
 
 function updateCountdown() {
 
-  const now = new Date();
+    const now = new Date().getTime();
 
-  const difference =
-    eventDate.getTime() - now.getTime();
-
-  const days =
-    document.getElementById("days");
-
-  const hours =
-    document.getElementById("hours");
-
-  const minutes =
-    document.getElementById("minutes");
-
-  const seconds =
-    document.getElementById("seconds");
+    const distance = weddingDate - now;
 
 
-  // Если дата уже наступила
+    // Если дата уже наступила
 
-  if (difference <= 0) {
+    if (distance <= 0) {
 
-    days.textContent = "0";
-    hours.textContent = "0";
-    minutes.textContent = "0";
-    seconds.textContent = "0";
+        document.getElementById("days").textContent = "0";
+        document.getElementById("hours").textContent = "0";
+        document.getElementById("minutes").textContent = "0";
+        document.getElementById("seconds").textContent = "0";
 
-    return;
-  }
-
-
-  const totalSeconds =
-    Math.floor(difference / 1000);
+        return;
+    }
 
 
-  const d =
-    Math.floor(totalSeconds / 86400);
+    // Дни
 
-
-  const h =
-    Math.floor(
-      (totalSeconds % 86400) / 3600
+    const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
     );
 
 
-  const m =
-    Math.floor(
-      (totalSeconds % 3600) / 60
+    // Часы
+
+    const hours = Math.floor(
+        (distance / (1000 * 60 * 60)) % 24
     );
 
 
-  const s =
-    totalSeconds % 60;
+    // Минуты
+
+    const minutes = Math.floor(
+        (distance / (1000 * 60)) % 60
+    );
 
 
-  days.textContent = d;
+    // Секунды
 
-  hours.textContent =
-    String(h).padStart(2, "0");
+    const seconds = Math.floor(
+        (distance / 1000) % 60
+    );
 
-  minutes.textContent =
-    String(m).padStart(2, "0");
 
-  seconds.textContent =
-    String(s).padStart(2, "0");
+    // Показываем значения
+
+    document.getElementById("days").textContent = days;
+
+    document.getElementById("hours").textContent = hours;
+
+    document.getElementById("minutes").textContent = minutes;
+
+    document.getElementById("seconds").textContent = seconds;
+
 }
 
 
-// Запускаем таймер
+// Запускаем таймер сразу
 
 updateCountdown();
 
-setInterval(
-  updateCountdown,
-  1000
-);
 
+// Обновляем каждую секунду
 
-// ========================================
-// ПОДТВЕРЖДЕНИЕ ПРИСУТСТВИЯ
-// ========================================
-
-const rsvpButton =
-  document.getElementById("rsvpButton");
-
-
-const message =
-  "Ассаляму алейкум! Я хочу подтвердить своё присутствие на валииме 16 августа 2026 года в 16:00.";
-
-
-rsvpButton.addEventListener(
-  "click",
-  function (event) {
-
-    event.preventDefault();
-
-
-    const encodedMessage =
-      encodeURIComponent(message);
-
-
-    /*
-      ПОКА НОМЕР НЕ УКАЗАН.
-
-      Поэтому откроется WhatsApp
-      с уже готовым текстом.
-    */
-
-    window.open(
-      `https://wa.me/?text=${encodedMessage}`,
-      "_blank"
-    );
-
-  }
-);
-
-
-// ========================================
-// АНИМАЦИЯ ПРИ ПРОКРУТКЕ
-// ========================================
-
-const cards =
-  document.querySelectorAll(".card");
-
-
-const observer =
-  new IntersectionObserver(
-
-    (entries) => {
-
-      entries.forEach(
-        (entry) => {
-
-          if (entry.isIntersecting) {
-
-            entry.target.classList.add(
-              "visible"
-            );
-
-            observer.unobserve(
-              entry.target
-            );
-
-          }
-
-        }
-      );
-
-    },
-
-    {
-      threshold: 0.08
-    }
-
-  );
-
-
-cards.forEach(
-  (card) => {
-
-    card.classList.add(
-      "reveal"
-    );
-
-    observer.observe(card);
-
-  }
-);
+setInterval(updateCountdown, 1000);
